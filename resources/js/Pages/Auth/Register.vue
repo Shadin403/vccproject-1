@@ -67,10 +67,12 @@
                 </div>
                 <div class="flex items-center justify-between">
                     <button
+                        :disabled="form.processing"
                         type="submit"
                         class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                     >
-                        Register
+                        <span v-if="!form.processing">Register</span>
+                        <span v-else>Registering...</span>
                     </button>
                     <a
                         href="/login"
@@ -86,6 +88,7 @@
 
 <script setup>
 import { reactive } from "vue";
+import { router } from "@inertiajs/vue3";
 
 const form = reactive({
     name: "",
@@ -95,7 +98,15 @@ const form = reactive({
 });
 
 const register = () => {
-    // Handle registration logic here
-    console.log(form);
+    router.post(route("register"), form, {
+        onFinish: () => (form.processing = false),
+        onSuccess: () => {
+            // Redirect will be handled automatically
+        },
+        onError: (errors) => {
+            console.error(errors);
+        },
+    });
+    form.processing = true;
 };
 </script>

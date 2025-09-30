@@ -17,6 +17,14 @@ Route::get('products', [ProductController::class, 'index'])->name('products');
 Route::middleware('guest')->group(function () {
     Route::get('register', [AuthController::class, 'showRegistrationForm'])->name('register');
     Route::get('login', [AuthController::class, 'showLoginForm'])->name('login');
+
+    // user create and login
+    Route::post('register', [AuthController::class, 'storeUser'])->name('register');
+    Route::post('login', [AuthController::class, 'login'])->name('login');
+});
+
+Route::middleware('auth')->group(function () {
+    Route::post('logout', [AuthController::class, 'logout'])->name('logout');
 });
 
 // Admin Routes

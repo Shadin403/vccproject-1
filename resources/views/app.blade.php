@@ -14,7 +14,7 @@
 
 
 
-    <script src="https://cdn.tailwindcss.com"></script>
+
     <style>
         @keyframes float {
 
@@ -38,7 +38,7 @@
     </style>
 
     @routes
-    @vite('resources/js/app.js')
+    @vite(['resources/js/app.js', 'resources/css/app.css'])
     @inertiaHead
 </head>
 

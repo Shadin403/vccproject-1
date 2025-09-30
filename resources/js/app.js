@@ -1,10 +1,14 @@
+import "../css/app.css";
+
 import MainLayout from "./Layouts/MainLayout.vue";
 import { createApp, h } from "vue";
 import { createInertiaApp } from "@inertiajs/vue3";
 import { ZiggyVue } from "ziggy-js";
 import { route } from "ziggy-js";
-
 import { MotionPlugin } from "@vueuse/motion";
+
+// Import NProgress configuration
+import "./config/nprogress";
 
 createInertiaApp({
     resolve: (name) => {

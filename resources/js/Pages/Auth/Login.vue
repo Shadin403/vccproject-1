@@ -37,10 +37,12 @@
                 </div>
                 <div class="flex items-center justify-between">
                     <button
+                        :disabled="form.processing"
                         type="submit"
                         class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                     >
-                        Sign In
+                        <span v-if="!form.processing">Login</span>
+                        <span v-else>Logging in...</span>
                     </button>
                     <a
                         href="/register"
@@ -56,14 +58,25 @@
 
 <script setup>
 import { reactive } from "vue";
+import { router } from "@inertiajs/vue3";
 
 const form = reactive({
     email: "",
     password: "",
+    remember: false,
+    processing: false,
 });
 
 const login = () => {
-    // Handle login logic here
-    console.log(form);
+    form.processing = true;
+    router.post(route("login"), form, {
+        onFinish: () => (form.processing = false),
+        onSuccess: () => {
+            // Redirect will be handled automatically by Laravel
+        },
+        onError: (errors) => {
+            console.error(errors);
+        },
+    });
 };
 </script>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VCC's World - Virtual Payment Cards</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        .float-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #f5f3ff 0%, #faf5ff 100%);
+        }
+    </style>
+</head>
+<body class="gradient-bg">
+    <!-- Navigation -->
+    <nav class="container px-6 py-4 mx-auto">
+        <div class="flex items-center justify-between">
+            <div class="text-2xl font-bold text-purple-600">VCC's World</div>
+            <div class="hidden space-x-8 md:flex">
+                <a href="#" class="text-gray-700 hover:text-purple-600">HOME</a>
+                <a href="#" class="text-gray-700 hover:text-purple-600">VCC's</a>
+                <a href="#" class="text-gray-700 hover:text-purple-600">CONTACT US</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button class="text-purple-600">🛒</button>
+                <button class="px-6 py-2 text-purple-600 transition border-2 border-purple-600 rounded-full hover:bg-purple-600 hover:text-white">Get Now</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="container px-6 py-20 mx-auto">
+        <div class="grid items-center gap-12 md:grid-cols-2">
+            <div>
+                <h1 class="mb-4 text-5xl font-bold text-gray-900">
+                    Make Online Payments<br>Safer With <span class="text-purple-600">VCC's World</span>
+                </h1>
+                <p class="mb-8 text-gray-600">
+                    Let us help you make virtual payments quicker, easier, and safer than ever before.
+                </p>
+                <button class="px-8 py-3 mb-8 text-white transition bg-purple-600 rounded-full hover:bg-purple-700">
+                    Get Your Card →
+                </button>
+                <div class="flex items-center space-x-4">
+                    <div class="flex -space-x-2">
+                        <img src="https://i.pravatar.cc/40?img=1" class="w-10 h-10 border-2 border-white rounded-full" alt="User">
+                        <img src="https://i.pravatar.cc/40?img=2" class="w-10 h-10 border-2 border-white rounded-full" alt="User">
+                        <img src="https://i.pravatar.cc/40?img=3" class="w-10 h-10 border-2 border-white rounded-full" alt="User">
+                    </div>
+                    <div>
+                        <div class="font-bold text-gray-900">10.2k+</div>
+                        <div class="text-sm text-gray-600">Active users around the world</div>
+                    </div>
+                </div>
+            </div>
+            <div class="relative float-animation">
+                <div class="relative w-full h-96">
+                    <div class="absolute transform -translate-x-1/2 -translate-y-1/2 bg-purple-500 rounded-full opacity-50 top-1/2 left-1/2 w-80 h-80"></div>
+                    <div class="absolute transform -translate-x-1/2 -translate-y-1/2 bg-purple-600 rounded-full top-1/2 left-1/2 w-72 h-72"></div>
+                    <div class="absolute p-4 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg shadow-lg top-1/2 left-1/4 rotate-12">
+                        <div class="text-xs">VCC's World</div>
+                        <div class="font-mono text-sm">1682 2011 2076 2827</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="container px-6 py-12 mx-auto">
+        <div class="p-8 bg-white shadow-lg rounded-3xl">
+            <div class="grid grid-cols-2 gap-8 text-center md:grid-cols-4">
+                <div>
+                    <div class="text-4xl font-bold text-gray-900">61+</div>
+                    <div class="mt-2 text-sm text-gray-600">Supported Currencies</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold text-gray-900">38.9M+</div>
+                    <div class="mt-2 text-sm text-gray-600">Merchant Partner</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold text-gray-900">10.2k+</div>
+                    <div class="mt-2 text-sm text-gray-600">Worldwide Clients</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold text-gray-900">100k $</div>
+                    <div class="mt-2 text-sm text-gray-600">Single Transaction Limit</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners -->
+    <section class="container px-6 py-12 mx-auto">
+        <div class="flex flex-wrap items-center justify-center gap-12">
+            <div class="text-4xl font-bold text-blue-600">ebay</div>
+            <div class="text-4xl font-bold text-blue-500">Walmart</div>
+            <div class="text-4xl font-bold text-gray-900">amazon</div>
+            <div class="text-3xl">🏪</div>
+            <div class="text-3xl">🛡️</div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="container px-6 py-20 mx-auto">
+        <h2 class="mb-4 text-4xl font-bold text-center">
+            What Makes VCC's World <span class="text-purple-600">Special?</span>
+        </h2>
+        <div class="grid gap-8 mt-12 md:grid-cols-3">
+            <div class="text-center">
+                <div class="flex items-center justify-center w-16 h-16 mx-auto mb-4 bg-purple-600 rounded-full">
+                    <span class="text-2xl text-white">💳</span>
+                </div>
+                <h3 class="mb-4 text-xl font-bold">Enjoy Anonymous Spending</h3>
+                <p class="text-sm text-gray-600">
+                    VCC's World lets users secure an account with a username, password, and email address. And that's about all the personal information you have to provide to make payments. This allows for safe, anonymous purchases, as well as making returns a breeze.
+                </p>
+            </div>
+            <div class="text-center">
+                <div class="flex items-center justify-center w-16 h-16 mx-auto mb-4 bg-purple-600 rounded-full">
+                    <span class="text-2xl text-white">🔒</span>
+                </div>
+                <h3 class="mb-4 text-xl font-bold">Spend With Cryptocurrency</h3>
+                <p class="text-sm text-gray-600">
+                    It's not easy to find online retailers and services that accept crypto payments. But even if they do, you'd rather not reveal your crypto wallet. That's why we use VCC's and a user crypto currency – this allows you to buy something that doesn't with accept credit cards or bitcoin.
+                </p>
+            </div>
+            <div class="text-center">
+                <div class="flex items-center justify-center w-16 h-16 mx-auto mb-4 bg-purple-600 rounded-full">
+                    <span class="text-2xl text-white">⚡</span>
+                </div>
+                <h3 class="mb-4 text-xl font-bold">Selection Of Choice</h3>
+                <p class="text-sm text-gray-600">
+                    We in Pixo, let users pick from non-reloadable Visa or MasterCard single-use VCCs or you account and pay for it with either a crypto or a credit card instead. You can VCC's then as a result of make a purchase or do a top-up via your e-wallet to use it later.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payments Section -->
+    <section class="container px-6 py-20 mx-auto">
+        <div class="grid items-center gap-12 md:grid-cols-2">
+            <div>
+                <h2 class="mb-4 text-4xl font-bold">
+                    Make Online <span class="text-purple-600">Payments</span><br>Safer Than Ever Before
+                </h2>
+                <p class="mb-8 text-gray-600">
+                    If you are worried about buying something with your credit card due to the risk of your details being stolen, VCC's World is perfect for you. Our service ensures you can make these payments confidently, using your cryptocurrency in ways you could not otherwise without risking your identity or financial safety.
+                </p>
+                <button class="px-8 py-3 text-white transition bg-purple-600 rounded-full hover:bg-purple-700">
+                    Get Your Card →
+                </button>
+            </div>
+            <div class="relative">
+                <div class="relative transform rotate-6">
+                    <div class="p-8 text-white shadow-2xl bg-gradient-to-br from-purple-600 to-purple-800 rounded-3xl">
+                        <div class="mb-8 text-sm">VCC's World</div>
+                        <div class="mb-6 font-mono text-lg">2071 2018 2021</div>
+                        <div class="flex items-end justify-between">
+                            <div>
+                                <div class="text-xs opacity-75">Card Holder</div>
+                                <div class="font-semibold">James Smith</div>
+                            </div>
+                            <div>
+                                <div class="text-xs opacity-75">Exp</div>
+                                <div class="font-semibold">12/28</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="absolute transform -bottom-8 -right-8 -rotate-6">
+                    <div class="w-64 p-8 text-white shadow-2xl bg-gradient-to-br from-green-600 to-green-800 rounded-3xl">
+                        <div class="mb-4 text-sm">VCC's World</div>
+                        <div class="font-mono text-sm">**** **** 2827</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Delivery Section -->
+    <section class="container px-6 py-20 mx-auto">
+        <div class="grid items-center gap-12 md:grid-cols-2">
+            <div class="relative">
+                <div class="transform -rotate-6">
+                    <div class="p-8 bg-gray-100 shadow-lg rounded-3xl">
+                        <div class="mb-4 text-sm text-gray-400">VCC's World</div>
+                        <div class="font-mono text-gray-300">**** **** **** 2051</div>
+                    </div>
+                </div>
+                <div class="absolute transform top-8 left-8 rotate-6">
+                    <div class="p-8 text-white shadow-2xl bg-gradient-to-br from-purple-600 to-purple-800 rounded-3xl">
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="text-sm">VCC's World</div>
+                            <div class="text-2xl">📡</div>
+                        </div>
+                        <div class="mb-8">
+                            <div class="mb-1 text-xs opacity-75">Card No.</div>
+                            <div class="font-mono text-lg">5812 3214 4152 1029</div>
+                        </div>
+                        <div class="flex justify-between">
+                            <div>
+                                <div class="text-xs opacity-75">Name</div>
+                                <div class="font-semibold">Jennifer Lewis</div>
+                            </div>
+                            <div>
+                                <div class="text-xs opacity-75">Valid Thru</div>
+                                <div class="font-semibold">06/25</div>
+                            </div>
+                        </div>
+                        <div class="mt-6 text-right">
+                            <span class="font-bold">VISA</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h2 class="mb-4 text-4xl font-bold">
+                    Receive Your Prepaid Virtual Credit Card In Just <span class="text-purple-600">Two Hours</span>
+                </h2>
+                <p class="mb-8 text-gray-600">
+                    We understand that when you want to make a purchase, you do not like to wait around. This is why the VCC's World team will guarantee rapid delivery of your virtual credit card. With a wait of just two hours, you can have a card that you can now use either as a one-off payment method or as a card you can top-up again.
+                </p>
+                <button class="px-8 py-3 text-white transition bg-purple-600 rounded-full hover:bg-purple-700">
+                    Get Your Card →
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="container px-6 py-20 mx-auto">
+        <h2 class="mb-12 text-4xl font-bold text-center">
+            Frequently Asked <span class="text-purple-600">Questions</span>
+        </h2>
+        <div class="max-w-3xl mx-auto space-y-4">
+            <div class="p-6 transition bg-white rounded-lg shadow cursor-pointer hover:shadow-lg" onclick="toggleFAQ(this)">
+                <div class="flex items-center justify-between">
+                    <h3 class="font-semibold">Is VCC's World accepted globally?</h3>
+                    <span class="text-2xl">+</span>
+                </div>
+                <div class="hidden mt-4 text-gray-600 faq-content">
+                    Yes, VCC's World is accepted at millions of merchants worldwide wherever Visa and MasterCard are accepted.
+                </div>
+            </div>
+            <div class="p-6 transition bg-white rounded-lg shadow cursor-pointer hover:shadow-lg" onclick="toggleFAQ(this)">
+                <div class="flex items-center justify-between">
+                    <h3 class="font-semibold">Can I use cryptocurrency with VCC's World?</h3>
+                    <span class="text-2xl">+</span>
+                </div>
+                <div class="hidden mt-4 text-gray-600 faq-content">
+                    Absolutely! You can fund your VCC's World virtual credit card using various cryptocurrencies.
+                </div>
+            </div>
+            <div class="p-6 transition bg-white rounded-lg shadow cursor-pointer hover:shadow-lg" onclick="toggleFAQ(this)">
+                <div class="flex items-center justify-between">
+                    <h3 class="font-semibold">Can VCC's World see my personal details?</h3>
+                    <span class="text-2xl">+</span>
+                </div>
+                <div class="hidden mt-4 text-gray-600 faq-content">
+                    We value your privacy. We only collect minimal information required for account creation and security.
+                </div>
+            </div>
+            <div class="p-6 transition bg-white rounded-lg shadow cursor-pointer hover:shadow-lg" onclick="toggleFAQ(this)">
+                <div class="flex items-center justify-between">
+                    <h3 class="font-semibold">Do you offer a money-back guarantee?</h3>
+                    <span class="text-2xl">+</span>
+                </div>
+                <div class="hidden mt-4 text-gray-600 faq-content">
+                    Yes, we offer a money-back guarantee. Contact our support team for more details.
+                </div>
+            </div>
+            <div class="p-6 transition bg-white rounded-lg shadow cursor-pointer hover:shadow-lg" onclick="toggleFAQ(this)">
+                <div class="flex items-center justify-between">
+                    <h3 class="font-semibold">How can I get help with my VCC?</h3>
+                    <span class="text-2xl">+</span>
+                </div>
+                <div class="hidden mt-4 text-gray-600 faq-content">
+                    Our support team is available 24/7 through live chat, email, and phone to assist you.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+
+
+    <script>
+
+    </script>
+</body>
+</html>

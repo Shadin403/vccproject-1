@@ -48,7 +48,8 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+   <main>
+     <!-- Hero Section -->
     <section class="container px-6 py-12 mx-auto">
         <div class="mb-12 text-center">
             <h1 class="mb-4 text-5xl font-bold text-gray-900">
@@ -132,6 +133,7 @@
             </div>
         </div>
     </div>
+   </main>
 
     <!-- Footer -->
     <footer class="py-12 mt-20 bg-white">
@@ -277,10 +279,10 @@
             productList.forEach(product => {
                 const card = document.createElement('div');
                 card.className = 'bg-white rounded-3xl shadow-lg p-8 card-hover fade-in relative';
-                
+
                 card.innerHTML = `
                     ${product.popular ? '<div class="absolute px-3 py-1 text-xs text-white bg-purple-600 rounded-full top-4 right-4">Popular</div>' : ''}
-                    
+
                     <div class="mb-6">
                         <div class="w-full h-48 bg-gradient-to-br ${product.type === 'visa' ? 'from-blue-600 to-blue-800' : 'from-orange-600 to-red-600'} rounded-2xl p-6 text-white relative overflow-hidden">
                             <div class="absolute top-0 right-0 w-32 h-32 -mt-16 -mr-16 bg-white rounded-full opacity-10"></div>

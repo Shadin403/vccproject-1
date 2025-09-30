@@ -7,12 +7,16 @@ use App\Http\Controllers\Admin\Auth\AuthController as AdminAuthController;
 
 
 
-Route::get('/', [HomeController::class, 'index']);
+use App\Http\Controllers\ProductController;
+
+
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('products', [ProductController::class, 'index'])->name('products');
 
 // Auth Routes
 Route::middleware('guest')->group(function () {
-    Route::get('login', [AuthController::class, 'showLoginForm'])->name('login');
     Route::get('register', [AuthController::class, 'showRegistrationForm'])->name('register');
+    Route::get('login', [AuthController::class, 'showLoginForm'])->name('login');
 });
 
 // Admin Routes

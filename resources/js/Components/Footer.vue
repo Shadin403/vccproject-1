@@ -1,4 +1,6 @@
-<script setup></script>
+<script setup>
+import { ArrowRightIcon } from "@heroicons/vue/24/solid";
+</script>
 
 <template>
     <footer class="py-12 bg-white">
@@ -47,7 +49,7 @@
                     <button
                         class="px-8 py-3 text-white transition bg-purple-600 rounded-full hover:bg-purple-700"
                     >
-                        Get Your Card →
+                        Get Your Card <ArrowRightIcon class="w-5 h-5 ml-2" />
                     </button>
                 </div>
             </div>

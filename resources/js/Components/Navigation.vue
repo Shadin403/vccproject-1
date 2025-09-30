@@ -1,13 +1,36 @@
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted, onUnmounted } from "vue";
 import { Link } from "@inertiajs/vue3";
 
+import { ShoppingCartIcon } from "@heroicons/vue/24/outline";
+
 const isOpen = ref(false);
+const isScrolled = ref(false);
+
+const handleScroll = () => {
+    if (window.scrollY > 50) {
+        isScrolled.value = true;
+    } else {
+        isScrolled.value = false;
+    }
+};
+
+onMounted(() => {
+    window.addEventListener("scroll", handleScroll);
+});
+
+onUnmounted(() => {
+    window.removeEventListener("scroll", handleScroll);
+});
 </script>
 
 <template>
     <nav
-        class="container px-6 py-4 mx-auto md:flex md:justify-between md:items-center"
+        :class="{
+            'sticky top-0 z-[999] bg-white shadow-md': isScrolled,
+            container: !isScrolled,
+        }"
+        class="px-6 py-4 mx-auto md:flex md:justify-between md:items-center transition-all duration-300"
     >
         <div class="flex items-center justify-between">
             <Link href="/" class="text-2xl font-bold text-purple-600"
@@ -36,21 +59,43 @@ const isOpen = ref(false);
             :class="[isOpen ? 'flex' : 'hidden']"
             class="flex-col mt-2 space-y-4 md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0"
         >
-            <a href="#" class="text-gray-700 hover:text-purple-600">HOME</a>
-            <a href="#" class="text-gray-700 hover:text-purple-600">VCC's</a>
-            <a href="#" class="text-gray-700 hover:text-purple-600"
-                >CONTACT US</a
+            <Link
+                :href="route('home')"
+                class="text-gray-700 hover:text-purple-600"
+                >HOME</Link
             >
+            <Link
+                :href="route('products')"
+                class="text-gray-700 hover:text-purple-600"
+                >SHOP</Link
+            >
+            <!-- <Link
+                :href="route('vccs')"
+                class="text-gray-700 hover:text-purple-600"
+                >VCC's</Link
+            > -->
+            <!-- <Link
+                :href="route('vccs')"
+                class="text-gray-700 hover:text-purple-600"
+                >VCC's</Link
+            > -->
+            <!-- <Link
+                :href="route('contact')"
+                class="text-gray-700 hover:text-purple-600"
+                >CONTACT US</Link
+            > -->
 
             <div class="flex items-center space-x-4">
-                <button class="text-purple-600">🛒</button>
+                <button class="text-purple-600">
+                    <ShoppingCartIcon class="w-6 h-6" />
+                </button>
                 <Link
-                    href="/login"
+                    :href="route('login')"
                     class="px-6 py-2 text-purple-600 transition border-2 border-purple-600 rounded-full hover:bg-purple-600 hover:text-white"
                     >Login</Link
                 >
                 <Link
-                    href="/register"
+                    :href="route('register')"
                     class="px-6 py-2 text-white bg-purple-600 rounded-full hover:bg-purple-700"
                     >Register</Link
                 >

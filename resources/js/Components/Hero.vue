@@ -75,7 +75,7 @@ import cardImage from "../../../public/images/cardImage.png";
                     Get Your Card →
                 </Link>
                 <div
-                    class="flex items-center space-x-4"
+                    class="flex items-center space-x-4 mt-[15px]"
                     v-motion
                     :initial="{
                         opacity: 0,

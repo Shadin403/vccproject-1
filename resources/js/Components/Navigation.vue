@@ -101,6 +101,7 @@
                     >
                         Register
                     </Link>
+                    <ThemeSwitcher />
                 </div>
             </div>
         </div>
@@ -150,11 +151,12 @@
                         "
                     ></span>
                 </Link>
-                >
             </div>
 
             <!-- theme toggle button -->
-            <div class="flex items-center">ic</div>
+            <div class="flex items-center">
+                <ThemeSwitcher />
+            </div>
 
             <!-- Mobile Auth Buttons -->
             <div class="flex flex-col space-y-4 pt-4 border-t">
@@ -180,15 +182,17 @@
 import { ref, onMounted, onUnmounted, computed } from "vue";
 import { Link, usePage } from "@inertiajs/vue3";
 import { ShoppingCart } from "lucide-vue-next";
+import ThemeSwitcher from "./ThemeSwitcher.vue";
 
 const page = usePage();
-const currentRoute = computed(() => page.url.value);
+const currentRoute = computed(() => page.url);
 
 const isOpen = ref(false);
 const isScrolled = ref(false);
 
 const isActive = (path) => {
-    return currentRoute.value === path;
+    const url = new URL(path);
+    return url.pathname === page.url;
 };
 
 const handleScroll = () => {

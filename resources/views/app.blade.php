@@ -42,7 +42,7 @@
     @inertiaHead
 </head>
 
-<body class="gradient-bg">
+<body class="gradient-bg dark:bg-red-700">
     @inertia
 </body>
 

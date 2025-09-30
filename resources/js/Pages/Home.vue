@@ -34,7 +34,7 @@ import QuickDeliverySection from "@/Components/QuickDeliverySection.vue";
         }"
     />
     <!-- Partners -->
-    <partners
+    <!-- <partners
         v-motion
         :initial="{
             opacity: 0,
@@ -44,7 +44,7 @@ import QuickDeliverySection from "@/Components/QuickDeliverySection.vue";
             opacity: 1,
             y: 0,
         }"
-    />
+    /> -->
     <!-- Features Section -->
     <features
         v-motion

@@ -1,5 +1,5 @@
 <template>
-    <main class="min-h-screen bg-gray-50">
+    <main class="min-h-screen bg-gray-50 dark:bg-gray-900">
         <!-- Mobile Filter Toggle Button -->
         <button
             @click="sidebarOpen = !sidebarOpen"
@@ -31,7 +31,7 @@
             <!-- Left Sidebar Filter -->
             <aside
                 :class="[
-                    'fixed lg:sticky top-0 h-screen bg-white shadow-xl z-50 transition-transform duration-300 ease-in-out',
+                    'fixed lg:sticky top-0 h-screen bg-white shadow-xl z-50 transition-transform duration-300 ease-in-out dark:bg-gray-800',
                     'w-80 overflow-y-auto',
                     sidebarOpen
                         ? 'translate-x-0'
@@ -41,12 +41,14 @@
                 <div class="p-6">
                     <!-- Sidebar Header -->
                     <div class="flex items-center justify-between mb-8">
-                        <h2 class="text-2xl font-bold text-gray-900">
+                        <h2
+                            class="text-2xl font-bold text-gray-900 dark:text-white"
+                        >
                             Filters
                         </h2>
                         <button
                             @click="sidebarOpen = false"
-                            class="text-gray-500 lg:hidden hover:text-gray-700"
+                            class="text-gray-500 lg:hidden hover:text-gray-700 dark:text-gray-300"
                         >
                             <svg
                                 class="w-6 h-6"
@@ -67,12 +69,12 @@
                     <!-- Card Type Filter -->
                     <div class="mb-6">
                         <label
-                            class="block mb-3 text-sm font-bold text-gray-900"
+                            class="block mb-3 text-sm font-bold text-gray-900 dark:text-white"
                             >Card Type</label
                         >
                         <div class="space-y-2">
                             <label
-                                class="flex items-center p-3 transition border-2 border-gray-200 rounded-lg cursor-pointer hover:border-purple-600"
+                                class="flex items-center p-3 transition border-2 border-gray-200 rounded-lg cursor-pointer hover:border-purple-600 dark:border-gray-700 dark:hover:border-purple-500"
                             >
                                 <input
                                     type="radio"
@@ -80,12 +82,13 @@
                                     value="all"
                                     class="w-4 h-4 text-purple-600 focus:ring-purple-500"
                                 />
-                                <span class="ml-3 text-gray-700"
+                                <span
+                                    class="ml-3 text-gray-700 dark:text-gray-300"
                                     >All Types</span
                                 >
                             </label>
                             <label
-                                class="flex items-center p-3 transition border-2 border-gray-200 rounded-lg cursor-pointer hover:border-purple-600"
+                                class="flex items-center p-3 transition border-2 border-gray-200 rounded-lg cursor-pointer hover:border-purple-600 dark:border-gray-700 dark:hover:border-purple-500"
                             >
                                 <input
                                     type="radio"
@@ -93,10 +96,13 @@
                                     value="visa"
                                     class="w-4 h-4 text-purple-600 focus:ring-purple-500"
                                 />
-                                <span class="ml-3 text-gray-700">Visa</span>
+                                <span
+                                    class="ml-3 text-gray-700 dark:text-gray-300"
+                                    >Visa</span
+                                >
                             </label>
                             <label
-                                class="flex items-center p-3 transition border-2 border-gray-200 rounded-lg cursor-pointer hover:border-purple-600"
+                                class="flex items-center p-3 transition border-2 border-gray-200 rounded-lg cursor-pointer hover:border-purple-600 dark:border-gray-700 dark:hover:border-purple-500"
                             >
                                 <input
                                     type="radio"
@@ -104,7 +110,8 @@
                                     value="mastercard"
                                     class="w-4 h-4 text-purple-600 focus:ring-purple-500"
                                 />
-                                <span class="ml-3 text-gray-700"
+                                <span
+                                    class="ml-3 text-gray-700 dark:text-gray-300"
                                     >Mastercard</span
                                 >
                             </label>
@@ -114,12 +121,12 @@
                     <!-- Validity Filter -->
                     <div class="mb-6">
                         <label
-                            class="block mb-3 text-sm font-bold text-gray-900"
+                            class="block mb-3 text-sm font-bold text-gray-900 dark:text-white"
                             >Validity Period</label
                         >
                         <select
                             v-model="filters.validity"
-                            class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-purple-600 focus:outline-none"
+                            class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-purple-600 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:text-white"
                         >
                             <option value="all">All Periods</option>
                             <option value="1">1 Month</option>
@@ -132,12 +139,12 @@
                     <!-- Balance Filter -->
                     <div class="mb-6">
                         <label
-                            class="block mb-3 text-sm font-bold text-gray-900"
+                            class="block mb-3 text-sm font-bold text-gray-900 dark:text-white"
                             >Balance Amount</label
                         >
                         <select
                             v-model="filters.balance"
-                            class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-purple-600 focus:outline-none"
+                            class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-purple-600 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:text-white"
                         >
                             <option value="all">All Amounts</option>
                             <option value="50">$50</option>
@@ -151,12 +158,12 @@
                     <!-- Product Type Filter -->
                     <div class="mb-6">
                         <label
-                            class="block mb-3 text-sm font-bold text-gray-900"
+                            class="block mb-3 text-sm font-bold text-gray-900 dark:text-white"
                             >Product Type</label
                         >
                         <div class="space-y-2">
                             <label
-                                class="flex items-center p-3 transition border-2 border-gray-200 rounded-lg cursor-pointer hover:border-purple-600"
+                                class="flex items-center p-3 transition border-2 border-gray-200 rounded-lg cursor-pointer hover:border-purple-600 dark:border-gray-700 dark:hover:border-purple-500"
                             >
                                 <input
                                     type="radio"
@@ -164,12 +171,13 @@
                                     value="all"
                                     class="w-4 h-4 text-purple-600 focus:ring-purple-500"
                                 />
-                                <span class="ml-3 text-gray-700"
+                                <span
+                                    class="ml-3 text-gray-700 dark:text-gray-300"
                                     >All Products</span
                                 >
                             </label>
                             <label
-                                class="flex items-center p-3 transition border-2 border-gray-200 rounded-lg cursor-pointer hover:border-purple-600"
+                                class="flex items-center p-3 transition border-2 border-gray-200 rounded-lg cursor-pointer hover:border-purple-600 dark:border-gray-700 dark:hover:border-purple-500"
                             >
                                 <input
                                     type="radio"
@@ -177,12 +185,13 @@
                                     value="simple"
                                     class="w-4 h-4 text-purple-600 focus:ring-purple-500"
                                 />
-                                <span class="ml-3 text-gray-700"
+                                <span
+                                    class="ml-3 text-gray-700 dark:text-gray-300"
                                     >Simple Products</span
                                 >
                             </label>
                             <label
-                                class="flex items-center p-3 transition border-2 border-gray-200 rounded-lg cursor-pointer hover:border-purple-600"
+                                class="flex items-center p-3 transition border-2 border-gray-200 rounded-lg cursor-pointer hover:border-purple-600 dark:border-gray-700 dark:hover:border-purple-500"
                             >
                                 <input
                                     type="radio"
@@ -190,7 +199,8 @@
                                     value="variation"
                                     class="w-4 h-4 text-purple-600 focus:ring-purple-500"
                                 />
-                                <span class="ml-3 text-gray-700"
+                                <span
+                                    class="ml-3 text-gray-700 dark:text-gray-300"
                                     >Variation Products</span
                                 >
                             </label>
@@ -200,7 +210,7 @@
                     <!-- Reset Filters Button -->
                     <button
                         @click="resetFilters"
-                        class="w-full px-6 py-3 text-purple-600 transition border-2 border-purple-600 rounded-lg hover:bg-purple-50"
+                        class="w-full px-6 py-3 text-purple-600 transition border-2 border-purple-600 rounded-lg hover:bg-purple-50 dark:text-purple-400 dark:border-purple-400 dark:hover:bg-gray-700"
                     >
                         Reset Filters
                     </button>
@@ -234,11 +244,12 @@
                     <div class="mx-auto max-w-7xl">
                         <!-- Results Header -->
                         <div class="flex items-center justify-between mb-8">
-                            <p class="text-lg text-gray-600">
+                            <p class="text-lg text-gray-600 dark:text-gray-400">
                                 Showing
-                                <span class="font-bold text-purple-600">{{
-                                    filteredProducts.length
-                                }}</span>
+                                <span
+                                    class="font-bold text-purple-600 dark:text-purple-400"
+                                    >{{ filteredProducts.length }}</span
+                                >
                                 products
                             </p>
                             <div class="flex gap-2">
@@ -248,7 +259,7 @@
                                         'p-2 rounded-lg transition',
                                         viewMode === 'grid'
                                             ? 'bg-purple-600 text-white'
-                                            : 'bg-gray-200 text-gray-600 hover:bg-gray-300',
+                                            : 'bg-gray-200 text-gray-600 hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600',
                                     ]"
                                 >
                                     <svg
@@ -271,7 +282,7 @@
                                         'p-2 rounded-lg transition',
                                         viewMode === 'list'
                                             ? 'bg-purple-600 text-white'
-                                            : 'bg-gray-200 text-gray-600 hover:bg-gray-300',
+                                            : 'bg-gray-200 text-gray-600 hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600',
                                     ]"
                                 >
                                     <svg
@@ -305,7 +316,7 @@
                                 v-for="product in filteredProducts"
                                 :key="product.id"
                                 :class="[
-                                    'bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl',
+                                    'bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl dark:bg-gray-800 dark:hover:shadow-purple-500/20',
                                     viewMode === 'list' ? 'flex' : '',
                                 ]"
                                 style="transition: transform 0.3s ease"
@@ -336,7 +347,7 @@
                                         class="flex items-start justify-between mb-3"
                                     >
                                         <h3
-                                            class="text-xl font-bold text-gray-900"
+                                            class="text-xl font-bold text-gray-900 dark:text-white"
                                         >
                                             {{ product.name }}
                                         </h3>
@@ -358,14 +369,16 @@
                                         </span>
                                     </div>
 
-                                    <p class="mb-4 text-gray-600">
+                                    <p
+                                        class="mb-4 text-gray-600 dark:text-gray-300"
+                                    >
                                         {{ product.description }}
                                     </p>
 
                                     <!-- Product Details -->
                                     <div class="flex flex-wrap gap-2 mb-4">
                                         <span
-                                            class="px-3 py-1 text-sm font-medium text-purple-700 bg-purple-100 rounded-full"
+                                            class="px-3 py-1 text-sm font-medium text-purple-700 bg-purple-100 rounded-full dark:bg-purple-900/50 dark:text-purple-300"
                                         >
                                             {{
                                                 product.cardType === "visa"
@@ -374,14 +387,14 @@
                                             }}
                                         </span>
                                         <span
-                                            class="px-3 py-1 text-sm font-medium text-blue-700 bg-blue-100 rounded-full"
+                                            class="px-3 py-1 text-sm font-medium text-blue-700 bg-blue-100 rounded-full dark:bg-blue-900/50 dark:text-blue-300"
                                         >
                                             {{ product.validity }} Month{{
                                                 product.validity > 1 ? "s" : ""
                                             }}
                                         </span>
                                         <span
-                                            class="px-3 py-1 text-sm font-medium text-green-700 bg-green-100 rounded-full"
+                                            class="px-3 py-1 text-sm font-medium text-green-700 bg-green-100 rounded-full dark:bg-green-900/50 dark:text-green-300"
                                         >
                                             ${{ product.balance }} Balance
                                         </span>
@@ -395,14 +408,14 @@
                                         class="mb-4"
                                     >
                                         <label
-                                            class="block mb-2 text-sm font-semibold text-gray-700"
+                                            class="block mb-2 text-sm font-semibold text-gray-700 dark:text-gray-300"
                                             >Select Option:</label
                                         >
                                         <select
                                             v-model="
                                                 selectedVariations[product.id]
                                             "
-                                            class="w-full px-4 py-2 border-2 border-gray-200 rounded-lg focus:border-purple-600 focus:outline-none"
+                                            class="w-full px-4 py-2 border-2 border-gray-200 rounded-lg focus:border-purple-600 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:text-white"
                                         >
                                             <option
                                                 v-for="(
@@ -423,13 +436,13 @@
                                         class="flex items-center justify-between"
                                     >
                                         <p
-                                            class="text-3xl font-bold text-purple-600"
+                                            class="text-3xl font-bold text-purple-600 dark:text-purple-400"
                                         >
                                             ${{ getProductPrice(product) }}
                                         </p>
                                         <button
                                             @click="addToCart(product)"
-                                            class="px-6 py-3 text-white transition bg-purple-600 rounded-lg hover:bg-purple-700"
+                                            class="px-6 py-3 text-white transition bg-purple-600 rounded-lg hover:bg-purple-700 dark:bg-purple-500 dark:hover:bg-purple-600"
                                         >
                                             Add to Cart
                                         </button>
@@ -441,7 +454,7 @@
                         <!-- No Products Found -->
                         <div v-else class="py-20 text-center">
                             <svg
-                                class="w-24 h-24 mx-auto mb-4 text-gray-300"
+                                class="w-24 h-24 mx-auto mb-4 text-gray-300 dark:text-gray-600"
                                 fill="none"
                                 stroke="currentColor"
                                 viewBox="0 0 24 24"
@@ -452,18 +465,21 @@
                                     stroke-width="2"
                                     d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                                 ></path>
+                                w
                             </svg>
-                            <h3 class="mb-2 text-2xl font-bold text-gray-900">
+                            <h3
+                                class="mb-2 text-2xl font-bold text-gray-900 dark:text-white"
+                            >
                                 No Products Found
                             </h3>
-                            <p class="mb-6 text-gray-600">
-                                Try adjusting your filters to see more results
+                            <p class="mb-6 text-gray-600 dark:text-gray-400">
+                                Try adjusting your filtwers to see more results
                             </p>
                             <button
                                 @click="resetFilters"
-                                class="px-6 py-3 text-white transition bg-purple-600 rounded-lg hover:bg-purple-700"
+                                class="px-6 py-3 text-white transition bg-purple-600 rounded-lg hover:bg-purple-700 dark:bg-purple-500 dark:hover:bg-purple-600"
                             >
-                                Reset Filters
+                                Reset Filters w
                             </button>
                         </div>
                     </div>
@@ -510,7 +526,7 @@ const products = ref([
         cardType: "mastercard",
         productType: "simple",
         image: "https://bd.visa.com/dam/VCOM/regional/ap/bangladesh/global-elements/images/bd-visa-gold-card-498x280.png",
-        description: "Ideal for regular shopping and online transactions",
+        description: "Ideal for regular showpping and online transactions",
     },
     {
         id: 3,
@@ -521,7 +537,7 @@ const products = ref([
         cardType: "visa",
         productType: "variation",
         image: "https://bd.visa.com/dam/VCOM/regional/ap/bangladesh/global-elements/images/bd-visa-gold-card-498x280.png",
-        description: "Multiple balance options for flexible usage",
+        description: "Multiple balance optwions for flexible usage",
         variations: [
             { label: "$250 Balance", price: 95, balance: 250 },
             { label: "$300 Balance", price: 110, balance: 300 },
@@ -533,7 +549,7 @@ const products = ref([
         name: "Mastercard Business Elite",
         price: 180,
         balance: 500,
-        validity: 12,
+        valwidity: 12,
         cardType: "mastercard",
         productType: "variation",
         image: "https://bd.visa.com/dam/VCOM/regional/ap/bangladesh/global-elements/images/bd-visa-gold-card-498x280.png",
@@ -546,7 +562,7 @@ const products = ref([
     },
     {
         id: 5,
-        name: "Visa Elite - Premium",
+        nawme: "Visa Elite - Premium",
         price: 350,
         balance: 1000,
         validity: 12,

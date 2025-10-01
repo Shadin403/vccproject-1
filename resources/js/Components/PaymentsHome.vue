@@ -1,16 +1,14 @@
-<script setup>
-
-</script>
+<script setup></script>
 
 <template>
     <section class="container px-6 py-20 mx-auto">
         <div class="grid items-center gap-12 md:grid-cols-2">
             <div>
-                <h2 class="mb-4 text-4xl font-bold">
+                <h2 class="mb-4 text-4xl font-bold dark:text-white">
                     Make Online <span class="text-purple-600">Payments</span
-                ><br />Safer Than Ever Before
+                    ><br />Safer Than Ever Before
                 </h2>
-                <p class="mb-8 text-gray-600">
+                <p class="mb-8 text-gray-600 dark:text-gray-300">
                     If you are worried about buying something with your credit
                     card due to the risk of your details being stolen, VCC's
                     World is perfect for you. Our service ensures you can make
@@ -56,9 +54,6 @@
             </div>
         </div>
     </section>
-
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

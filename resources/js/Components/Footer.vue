@@ -3,12 +3,14 @@ import { ArrowRightIcon } from "@heroicons/vue/24/solid";
 </script>
 
 <template>
-    <footer class="py-12 bg-white">
+    <footer class="py-12 bg-white dark:bg-gray-800">
         <div class="container px-6 mx-auto">
             <div class="grid gap-8 md:grid-cols-4">
                 <div>
-                    <h3 class="mb-4 text-xl font-bold">Quick Links</h3>
-                    <ul class="space-y-2 text-gray-600">
+                    <h3 class="mb-4 text-xl font-bold dark:text-white">
+                        Quick Links
+                    </h3>
+                    <ul class="space-y-2 text-gray-600 dark:text-gray-300">
                         <li>
                             <a href="#" class="hover:text-purple-600"
                                 >Discover the power of our service and rewarding
@@ -18,8 +20,10 @@ import { ArrowRightIcon } from "@heroicons/vue/24/solid";
                     </ul>
                 </div>
                 <div>
-                    <h3 class="mb-4 text-xl font-bold">Contact</h3>
-                    <ul class="space-y-2 text-gray-600">
+                    <h3 class="mb-4 text-xl font-bold dark:text-white">
+                        Contact
+                    </h3>
+                    <ul class="space-y-2 text-gray-600 dark:text-gray-300">
                         <li>
                             <a href="#" class="hover:text-purple-600">Home</a>
                         </li>
@@ -32,7 +36,9 @@ import { ArrowRightIcon } from "@heroicons/vue/24/solid";
                     </ul>
                 </div>
                 <div>
-                    <ul class="mt-12 space-y-2 text-gray-600">
+                    <ul
+                        class="mt-12 space-y-2 text-gray-600 dark:text-gray-300"
+                    >
                         <li>
                             <a href="#" class="hover:text-purple-600"
                                 >Instagram</a

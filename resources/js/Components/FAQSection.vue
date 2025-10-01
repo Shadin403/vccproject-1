@@ -41,22 +41,26 @@ const toggleFAQ = (faq) => {
 
 <template>
     <section class="container px-6 py-20 mx-auto">
-        <h2 class="mb-12 text-4xl font-bold text-center">
+        <h2 class="mb-12 text-4xl font-bold text-center dark:text-white">
             Frequently Asked <span class="text-purple-600">Questions</span>
         </h2>
         <div class="max-w-3xl mx-auto space-y-4">
             <div
                 v-for="faq in faqs"
                 :key="faq.id"
-                class="p-6 transition bg-white rounded-lg shadow cursor-pointer hover:shadow-lg"
+                class="p-6 transition bg-white rounded-lg shadow cursor-pointer dark:bg-gray-800 hover:shadow-lg"
                 @click="toggleFAQ(faq)"
             >
                 <div class="flex items-center justify-between">
-                    <h3 class="font-semibold">{{ faq.question }}</h3>
-                    <span class="text-2xl">{{ faq.isOpen ? "−" : "+" }}</span>
+                    <h3 class="font-semibold dark:text-white">
+                        {{ faq.question }}
+                    </h3>
+                    <span class="text-2xl dark:text-white">{{
+                        faq.isOpen ? "−" : "+"
+                    }}</span>
                 </div>
                 <div
-                    class="mt-4 text-gray-600"
+                    class="mt-4 text-gray-600 dark:text-gray-300"
                     :class="{ hidden: !faq.isOpen }"
                 >
                     {{ faq.answer }}

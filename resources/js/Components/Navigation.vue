@@ -1,8 +1,9 @@
 <template>
     <nav
         :class="{
-            'sticky top-0 z-[999] bg-white shadow-md': isScrolled,
-            container: !isScrolled,
+            'sticky top-0 z-[999] bg-white shadow-md dark:bg-gray-800':
+                isScrolled,
+            'container dark:bg-gray-900': !isScrolled,
         }"
         class="px-6 py-4 mx-auto transition-all duration-300"
     >
@@ -18,7 +19,7 @@
             <div @click="isOpen = !isOpen" class="flex md:hidden">
                 <button
                     type="button"
-                    class="text-gray-500 hover:text-gray-600 focus:outline-none focus:text-gray-600"
+                    class="text-gray-500 hover:text-gray-600 focus:outline-none focus:text-gray-600 dark:text-gray-300"
                     aria-label="toggle menu"
                 >
                     <svg viewBox="0 0 24 24" class="w-6 h-6 fill-current">
@@ -35,11 +36,11 @@
                 class="hidden md:flex md:items-center md:justify-between md:flex-1"
             >
                 <!-- Navigation Links (Center) -->
-                <div class="flex-1 flex justify-center">
+                <div class="flex justify-center flex-1">
                     <div class="flex space-x-12">
                         <Link
                             :href="route('home')"
-                            class="text-gray-800 font-semibold tracking-wide text-sm transition-all duration-300 hover:text-purple-600 relative group"
+                            class="relative text-sm font-semibold tracking-wide text-gray-800 transition-all duration-300 hover:text-purple-600 group dark:text-white"
                             :class="{
                                 'text-purple-600': isActive(route('home')),
                             }"
@@ -58,7 +59,7 @@
                         </Link>
                         <Link
                             :href="route('products')"
-                            class="text-gray-800 font-semibold tracking-wide text-sm transition-all duration-300 hover:text-purple-600 relative group"
+                            class="relative text-sm font-semibold tracking-wide text-gray-800 transition-all duration-300 hover:text-purple-600 group dark:text-white"
                             :class="{
                                 'text-purple-600': isActive(route('products')),
                             }"
@@ -80,18 +81,18 @@
 
                 <!-- Auth Buttons (Right) -->
                 <div class="flex items-center space-x-6">
-                    <button class="text-purple-600 relative group">
+                    <button class="relative text-purple-600 group">
                         <ShoppingCart
                             class="w-6 h-6 transition-transform duration-300 transform group-hover:scale-110"
                         />
                         <span
-                            class="absolute -top-2 -right-2 w-5 h-5 bg-purple-600 text-white text-xs rounded-full flex items-center justify-center transform transition-transform duration-300 group-hover:scale-110"
+                            class="absolute flex items-center justify-center w-5 h-5 text-xs text-white transition-transform duration-300 transform bg-purple-600 rounded-full -top-2 -right-2 group-hover:scale-110"
                             >0</span
                         >
                     </button>
                     <Link
                         :href="route('login')"
-                        class="px-6 py-2 text-purple-600 font-semibold transition-all duration-300 border-2 border-purple-600 rounded-full hover:bg-purple-600 hover:text-white hover:shadow-lg"
+                        class="px-6 py-2 font-semibold text-purple-600 transition-all duration-300 border-2 border-purple-600 rounded-full hover:bg-purple-600 hover:text-white hover:shadow-lg"
                     >
                         Login
                     </Link>
@@ -115,7 +116,7 @@
             <div class="flex flex-col space-y-4">
                 <Link
                     :href="route('home')"
-                    class="text-gray-700 hover:text-purple-600 relative group"
+                    class="relative text-gray-700 hover:text-purple-600 group dark:text-white"
                     :class="{
                         'text-purple-600 font-semibold': isActive(
                             route('home')
@@ -134,7 +135,7 @@
                 </Link>
                 <Link
                     :href="route('products')"
-                    class="text-gray-700 hover:text-purple-600 relative group"
+                    class="relative text-gray-700 hover:text-purple-600 group dark:text-white"
                     :class="{
                         'text-purple-600 font-semibold': isActive(
                             route('products')
@@ -159,10 +160,12 @@
             </div>
 
             <!-- Mobile Auth Buttons -->
-            <div class="flex flex-col space-y-4 pt-4 border-t">
-                <button class="text-purple-600 flex items-center space-x-2">
+            <div
+                class="flex flex-col pt-4 space-y-4 border-t dark:border-gray-700"
+            >
+                <button class="flex items-center space-x-2 text-purple-600">
                     <ShoppingCart class="w-6 h-6" />
-                    <span>Cart</span>
+                    <span class="dark:text-white">Cart</span>
                 </button>
                 <Link
                     :href="route('login')"

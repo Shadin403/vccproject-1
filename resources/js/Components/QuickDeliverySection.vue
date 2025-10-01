@@ -1,17 +1,17 @@
-<script setup>
-
-</script>
+<script setup></script>
 
 <template>
     <section class="container px-6 py-20 mx-auto">
         <div class="grid items-center gap-12 md:grid-cols-2">
             <div class="relative">
                 <div class="transform -rotate-6">
-                    <div class="p-8 bg-gray-100 shadow-lg rounded-3xl">
+                    <div
+                        class="p-8 bg-gray-100 shadow-lg dark:bg-gray-800 rounded-3xl"
+                    >
                         <div class="mb-4 text-sm text-gray-400">
                             VCC's World
                         </div>
-                        <div class="font-mono text-gray-300">
+                        <div class="font-mono text-gray-300 dark:text-gray-500">
                             **** **** **** 2051
                         </div>
                     </div>
@@ -47,11 +47,11 @@
                 </div>
             </div>
             <div>
-                <h2 class="mb-4 text-4xl font-bold">
+                <h2 class="mb-4 text-4xl font-bold dark:text-white">
                     Receive Your Prepaid Virtual Credit Card In Just
                     <span class="text-purple-600">Two Hours</span>
                 </h2>
-                <p class="mb-8 text-gray-600">
+                <p class="mb-8 text-gray-600 dark:text-gray-300">
                     We understand that when you want to make a purchase, you do
                     not like to wait around. This is why the VCC's World team
                     will guarantee rapid delivery of your virtual credit card.
@@ -67,9 +67,6 @@
             </div>
         </div>
     </section>
-
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

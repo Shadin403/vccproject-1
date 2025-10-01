@@ -32,11 +32,20 @@ const isDarkMode = ref(false);
 
 const toggleTheme = () => {
     switchTheme();
-    isDarkMode.value = localStorage.theme === "dark";
+    // Update the reactive state after switching
+    isDarkMode.value =
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches);
 };
 
 onMounted(() => {
+    // Initialize theme on component mount
     setThemeOnLoad();
-    isDarkMode.value = localStorage.theme === "dark";
+    // Set the initial state based on current theme
+    isDarkMode.value =
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches);
 });
 </script>

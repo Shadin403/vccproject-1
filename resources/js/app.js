@@ -9,6 +9,7 @@ import { MotionPlugin } from "@vueuse/motion";
 
 // Import NProgress configuration
 import "./config/nprogress";
+import { setThemeOnLoad } from "./theme";
 
 createInertiaApp({
     resolve: (name) => {
@@ -25,3 +26,5 @@ createInertiaApp({
             .mount(el);
     },
 });
+
+setThemeOnLoad();

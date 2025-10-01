@@ -20,25 +20,25 @@
 
                 <!-- Stats Card -->
                 <div
-                    class="bg-white rounded-3xl shadow-xl border border-purple-100 p-8 md:p-12 relative overflow-hidden"
+                    class="relative p-8 overflow-hidden bg-white border border-purple-100 shadow-xl dark:bg-gray-800 rounded-3xl dark:border-purple-800 md:p-12"
                 >
                     <!-- Gradient overlay effect -->
                     <div
-                        class="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-purple-100 to-transparent opacity-30 rounded-full -mr-32 -mt-32"
+                        class="absolute top-0 right-0 w-64 h-64 -mt-32 -mr-32 rounded-full bg-gradient-to-br from-purple-100 to-transparent opacity-30 dark:opacity-10"
                     ></div>
 
                     <div
-                        class="grid grid-cols-2 md:grid-cols-4 gap-8 relative z-10"
+                        class="relative z-10 grid grid-cols-2 gap-8 md:grid-cols-4"
                     >
                         <!-- Stat 1 -->
                         <div class="text-center">
                             <div
-                                class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent"
+                                class="text-4xl font-bold text-transparent md:text-5xl bg-gradient-to-r from-gray-800 to-gray-600 dark:from-white dark:to-gray-400 bg-clip-text"
                             >
                                 61+
                             </div>
                             <div
-                                class="mt-3 text-sm md:text-base text-gray-600 font-medium"
+                                class="mt-3 text-sm font-medium text-gray-600 md:text-base dark:text-gray-400"
                             >
                                 Supported Currencies
                             </div>
@@ -47,12 +47,12 @@
                         <!-- Stat 2 -->
                         <div class="text-center">
                             <div
-                                class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent"
+                                class="text-4xl font-bold text-transparent md:text-5xl bg-gradient-to-r from-gray-800 to-gray-600 dark:from-white dark:to-gray-400 bg-clip-text"
                             >
                                 38.9M+
                             </div>
                             <div
-                                class="mt-3 text-sm md:text-base text-gray-600 font-medium"
+                                class="mt-3 text-sm font-medium text-gray-600 md:text-base dark:text-gray-400"
                             >
                                 Merchant Partner
                             </div>
@@ -61,12 +61,12 @@
                         <!-- Stat 3 -->
                         <div class="text-center">
                             <div
-                                class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent"
+                                class="text-4xl font-bold text-transparent md:text-5xl bg-gradient-to-r from-gray-800 to-gray-600 dark:from-white dark:to-gray-400 bg-clip-text"
                             >
                                 10.2k+
                             </div>
                             <div
-                                class="mt-3 text-sm md:text-base text-gray-600 font-medium"
+                                class="mt-3 text-sm font-medium text-gray-600 md:text-base dark:text-gray-400"
                             >
                                 Worldwide Clients
                             </div>
@@ -75,12 +75,12 @@
                         <!-- Stat 4 -->
                         <div class="text-center">
                             <div
-                                class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent"
+                                class="text-4xl font-bold text-transparent md:text-5xl bg-gradient-to-r from-gray-800 to-gray-600 dark:from-white dark:to-gray-400 bg-clip-text"
                             >
                                 100k $
                             </div>
                             <div
-                                class="mt-3 text-sm md:text-base text-gray-600 font-medium"
+                                class="mt-3 text-sm font-medium text-gray-600 md:text-base dark:text-gray-400"
                             >
                                 Single Transaction Limit
                             </div>
@@ -89,7 +89,7 @@
                 </div>
 
                 <!-- Star decoration bottom left -->
-                <div class="absolute -bottom-4 -left-4 md:left-12 z-20">
+                <div class="absolute z-20 -bottom-4 -left-4 md:left-12">
                     <svg
                         class="w-10 h-10 text-purple-500 animate-spin-slow"
                         fill="currentColor"

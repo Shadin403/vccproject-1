@@ -21,7 +21,7 @@ import cardImage from "../../../public/images/cardImage.png";
                 }"
             >
                 <h1
-                    class="mb-4 text-5xl font-bold text-gray-900"
+                    class="mb-4 text-5xl font-bold text-gray-900 dark:text-white"
                     v-motion
                     :initial="{
                         opacity: 0,
@@ -39,7 +39,7 @@ import cardImage from "../../../public/images/cardImage.png";
                     <span class="text-purple-600">VCC's World</span>
                 </h1>
                 <p
-                    class="mb-8 text-gray-600"
+                    class="mb-8 text-gray-600 dark:text-gray-300"
                     v-motion
                     :initial="{
                         opacity: 0,
@@ -58,7 +58,7 @@ import cardImage from "../../../public/images/cardImage.png";
                 </p>
                 <Link
                     :href="route('products')"
-                    class="px-8 py-3 mb-12 mt-1 text-white transition bg-purple-600 rounded-full hover:bg-purple-700"
+                    class="px-8 py-3 mt-1 mb-12 text-white transition bg-purple-600 rounded-full hover:bg-purple-700"
                     v-motion
                     :initial="{
                         opacity: 0,

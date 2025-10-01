@@ -1,33 +1,41 @@
 <?php
 
+use App\Http\Controllers\Backend\AdminPageController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\Auth\AuthController;
-use App\Http\Controllers\Admin\Auth\AuthController as AdminAuthController;
+use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\Frontend\ProductController;
+use App\Http\Controllers\Frontend\RegisteredUserController;
+use App\Http\Controllers\Backend\AuthenticatedSessionController;
+use App\Http\Controllers\Frontend\PagesController;
 
-
-
-use App\Http\Controllers\ProductController;
-
-
-Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('products', [ProductController::class, 'index'])->name('products');
+Route::get('/', [PagesController::class, 'index'])->name('home');
+Route::get('products', [PagesController::class, 'productsListing'])->name('products');
 
 // Auth Routes
 Route::middleware('guest')->group(function () {
-    Route::get('register', [AuthController::class, 'showRegistrationForm'])->name('register');
-    Route::get('login', [AuthController::class, 'showLoginForm'])->name('login');
+    Route::get('register', [RegisteredUserController::class, 'showRegistrationForm'])->name('register');
+    Route::post('register', [RegisteredUserController::class, 'storeUser'])->name('register.store');
 
-    // user create and login
-    Route::post('register', [AuthController::class, 'storeUser'])->name('register');
-    Route::post('login', [AuthController::class, 'login'])->name('login');
+    Route::get('login', [AuthenticatedSessionController::class, 'showLoginForm'])->name('login');
+    Route::post('login', [AuthenticatedSessionController::class, 'login'])->name('login.store');
+
+    //admin Login
+    Route::get('admin/login', [AuthenticatedSessionController::class, 'showLoginForm'])->name('admin.login');
 });
 
 Route::middleware('auth')->group(function () {
-    Route::post('logout', [AuthController::class, 'logout'])->name('logout');
+    Route::post('logout', [AuthenticatedSessionController::class, 'logout'])->name('logout');
+});
+
+
+// Customer Routes
+
+Route::middleware('auth')->prefix('customer')->group(function () {
+    Route::get('dashboard', [PagesController::class, 'customerDashboard'])->name('customer.dashboard');
 });
 
 // Admin Routes
-Route::prefix('admin')->group(function () {
-    Route::get('login', [AdminAuthController::class, 'showLoginForm'])->name('admin.login');
+
+Route::middleware(['auth'])->prefix('admin')->group(function () {
+    Route::get('dashboard', [AdminPageController::class, 'index'])->name('admin.dashboard');
 });

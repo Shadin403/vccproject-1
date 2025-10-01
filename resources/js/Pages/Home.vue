@@ -10,29 +10,21 @@ import QuickDeliverySection from "@/Components/QuickDeliverySection.vue";
 
 <template>
     <!-- Hero Section -->
-    <hero
-        v-motion
-        :initial="{
-            opacity: 0,
-            y: 100,
-        }"
-        :enter="{
-            opacity: 1,
-            y: 0,
-        }"
-    />
+    <hero v-motion :initial="{
+        opacity: 0,
+        y: 100,
+    }" :enter="{
+        opacity: 1,
+        y: 0,
+    }" />
     <!-- Stats Section -->
-    <stats
-        v-motion
-        :initial="{
-            opacity: 0,
-            y: 100,
-        }"
-        :visibleOnce="{
-            opacity: 1,
-            y: 0,
-        }"
-    />
+    <stats v-motion :initial="{
+        opacity: 0,
+        y: 100,
+    }" :visibleOnce="{
+        opacity: 1,
+        y: 0,
+    }" />
     <!-- Partners -->
     <!-- <partners
         v-motion
@@ -46,51 +38,35 @@ import QuickDeliverySection from "@/Components/QuickDeliverySection.vue";
         }"
     /> -->
     <!-- Features Section -->
-    <features
-        v-motion
-        :initial="{
-            opacity: 0,
-            y: 100,
-        }"
-        :visibleOnce="{
-            opacity: 1,
-            y: 0,
-        }"
-    />
+    <features v-motion :initial="{
+        opacity: 0,
+        y: 100,
+    }" :visibleOnce="{
+        opacity: 1,
+        y: 0,
+    }" />
     <!-- Payments Section -->
-    <payments-home
-        v-motion
-        :initial="{
-            opacity: 0,
-            y: 100,
-        }"
-        :visibleOnce="{
-            opacity: 1,
-            y: 0,
-        }"
-    />
+    <payments-home v-motion :initial="{
+        opacity: 0,
+        y: 100,
+    }" :visibleOnce="{
+        opacity: 1,
+        y: 0,
+    }" />
     <!-- Quick Delivery Section -->
-    <quick-delivery-section
-        v-motion
-        :initial="{
-            opacity: 0,
-            y: 100,
-        }"
-        :visibleOnce="{
-            opacity: 1,
-            y: 0,
-        }"
-    />
+    <quick-delivery-section v-motion :initial="{
+        opacity: 0,
+        y: 100,
+    }" :visibleOnce="{
+        opacity: 1,
+        y: 0,
+    }" />
     <!-- FAQ Section -->
-    <f-a-q-section
-        v-motion
-        :initial="{
-            opacity: 0,
-            y: 100,
-        }"
-        :visibleOnce="{
-            opacity: 1,
-            y: 0,
-        }"
-    />
+    <f-a-q-section v-motion :initial="{
+        opacity: 0,
+        y: 100,
+    }" :visibleOnce="{
+        opacity: 1,
+        y: 0,
+    }" />
 </template>

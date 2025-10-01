@@ -1,4 +1,5 @@
 import "../css/app.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 import MainLayout from "./Layouts/MainLayout.vue";
 import { createApp, h } from "vue";

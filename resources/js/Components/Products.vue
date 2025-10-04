@@ -190,24 +190,22 @@
                         ]">
                             <!-- Product Card Loop -->
                             <div v-for="product in filteredProducts" :key="product.id" :class="[
-                                'group bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 dark:bg-gray-800 border border-transparent hover:shadow-xl hover:border-purple-300 dark:hover:border-purple-600',
-                                viewMode === 'list' ? 'flex flex-row' : 'flex flex-col',
+                                'group bg-white rounded-lg shadow-sm overflow-hidden transition-all duration-300 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:shadow-lg hover:border-purple-300 dark:hover:border-purple-500',
+                                viewMode === 'list' ? 'flex flex-row' : 'flex flex-col h-[420px]',
                             ]">
                                 <!-- Product Image Container -->
                                 <div :class="[
-                                    'overflow-hidden',
-                                    viewMode === 'list' ? 'w-1/3 flex-shrink-0' : 'w-full',
+                                    'relative overflow-hidden',
+                                    viewMode === 'list' ? 'w-1/3 flex-shrink-0' : 'w-full h-40',
                                 ]">
                                     <img :src="product.image" :alt="product.name" :class="[
                                         'object-cover transition-transform duration-300 group-hover:scale-105',
-                                        viewMode === 'list'
-                                            ? 'w-full h-full'
-                                            : 'w-full h-48',
+                                        viewMode === 'list' ? 'w-full h-full' : 'w-full h-full',
                                     ]" />
                                 </div>
 
                                 <!-- Product Info Container -->
-                                <div class="flex flex-col flex-1 p-4">
+                                <div class="flex flex-col flex-1 p-6">
                                     <div class="flex-grow">
                                         <div class="flex items-start justify-between mb-2">
                                             <h3
@@ -257,11 +255,11 @@
 
                                     <!-- Price and Add to Cart Button -->
                                     <div class="flex items-center justify-between mt-auto">
-                                        <p class="text-2xl font-semibold text-purple-600 dark:text-purple-400">
+                                        <p class="text-xl font-bold text-purple-600 dark:text-purple-400">
                                             ${{ getProductPrice(product) }}
                                         </p>
                                         <button @click="addToCart(product)"
-                                            class="px-4 py-2 text-sm font-medium text-white transition bg-purple-600 rounded-lg hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 dark:bg-purple-500 dark:hover:bg-purple-600">
+                                            class="px-4 py-2 text-sm font-semibold text-white transition-all duration-300 transform bg-purple-600 rounded-lg shadow-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50 hover:scale-105 dark:bg-purple-500 dark:hover:bg-purple-600">
                                             Add to Cart
                                         </button>
                                     </div>

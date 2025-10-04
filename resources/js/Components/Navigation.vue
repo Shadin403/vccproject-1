@@ -114,7 +114,7 @@
                                 </svg>
                             </button>
                             <div v-show="dropdownOpen"
-                                class="absolute right-0 w-48 py-2 mt-2 bg-white rounded-md shadow-xl dark:bg-gray-700">
+                                class="absolute right-0 z-50 w-48 py-2 mt-2 bg-white rounded-md shadow-xl dark:bg-gray-700">
                                 <Link :href="$page.props.auth.user.role === 'admin'
                                     ? route('admin.dashboard')
                                     : route('customer.dashboard')
@@ -134,7 +134,7 @@
         </div>
 
         <!-- Mobile Menu -->
-        <div :class="[isOpen ? 'flex' : 'hidden']" class="flex-col mt-2 space-y-4 md:hidden">
+        <div :class="[isOpen ? 'flex' : 'hidden']" class="flex-col mt-2 space-y-4 md:hidden" ref="mobileMenuContainer">
             <!-- Mobile Navigation Links -->
             <div class="flex flex-col space-y-4">
                 <Link :href="route('home')" class="relative text-gray-700 hover:text-purple-600 group dark:text-white"
@@ -188,7 +188,8 @@
                         </svg>
                     </button>
                     <div v-show="mobileDropdownOpen" class="mt-2 space-y-2">
-                        <Link href="/"
+                        <Link
+                            :href="$page.props.auth.user.role === 'admin' ? route('admin.dashboard') : route('customer.dashboard')"
                             class="block px-6 py-2 text-center text-white bg-purple-600 rounded-full hover:bg-purple-700">
                         Dashboard</Link>
                         <Link :href="route('logout')" method="post" as="button"
@@ -202,7 +203,7 @@
 </template>
 <script setup>
 import { ref, onMounted, onUnmounted, computed } from "vue";
-import { Link, usePage } from "@inertiajs/vue3";
+import { Link, usePage, router } from "@inertiajs/vue3";
 import { ShoppingCart } from "lucide-vue-next";
 import ThemeSwitcher from "./ThemeSwitcher.vue";
 
@@ -214,6 +215,7 @@ const isOpen = ref(false);
 const isScrolled = ref(false);
 const desktopDropdownContainer = ref(null);
 const mobileDropdownContainer = ref(null);
+const mobileMenuContainer = ref(null);
 
 const isActive = (path) => {
     const url = new URL(path);
@@ -241,7 +243,21 @@ const handleClickOutside = (event) => {
     ) {
         mobileDropdownOpen.value = false;
     }
+    if (
+        mobileMenuContainer.value &&
+        !mobileMenuContainer.value.contains(event.target) &&
+        isOpen.value
+    ) {
+        const menuButton = document.querySelector('[aria-label="toggle menu"]');
+        if (menuButton && !menuButton.contains(event.target)) {
+            isOpen.value = false;
+        }
+    }
 };
+
+router.on("navigate", () => {
+    isOpen.value = false;
+});
 
 onMounted(() => {
     window.addEventListener("scroll", handleScroll);

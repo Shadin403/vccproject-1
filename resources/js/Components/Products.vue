@@ -151,7 +151,7 @@
                             <p class="text-lg text-gray-600 dark:text-gray-400">
                                 Showing
                                 <span class="font-bold text-purple-600 dark:text-purple-400">{{ filteredProducts.length
-                                    }}</span>
+                                }}</span>
                                 products
                             </p>
                             <div class="flex gap-2">
